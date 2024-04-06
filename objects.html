@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+
+<body>
+    <script>
+        const obj = {
+            name: 'sachin',
+            age: 22
+        };
+
+        console.log(obj);           //printing obj properties
+
+        console.log(obj.age);       //printing age
+        console.log(obj.name);      //printing name  
+
+        obj.age = 23;               // updating the age
+        console.log(obj.age);       //printing updated new age
+
+        obj.color = 'red';          //adding new propety in the object
+        console.log(obj);
+
+        delete obj.age;             //deleting the propety in the object
+        console.log(obj);
+    </script>
+</body>
+
+</html>

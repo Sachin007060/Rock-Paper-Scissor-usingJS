@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper and Scissor project</title>
+</head>
+
+<body>
+    <p>Rock Paper and Scissor</p>
+    <button onclick="
+
+    let randomNmbr = Math.random();
+    let cmptrMove = '';
+
+    if(randomNmbr>=0 && randomNmbr<1/3){
+        cmptrMove = 'Rock';
+    } else if(randomNmbr>=1/3 && randomNmbr<2/3){
+        cmptrMove = 'Paper';
+    }else{
+        cmptrMove = 'Scissor';
+    }
+
+
+    let result = '';
+
+    if(cmptrMove === 'Rock'){
+        result = 'Tie.';
+    }else if(cmptrMove === 'Paper'){
+        result = 'You Lose.';
+    }else{
+        result = 'You Win.';
+    }
+
+    alert( `You picked Rock. Computer picked ${cmptrMove}. ${result}`)
+
+    ">Rock</button>
+    <button onclick="
+
+    let randomNmbr = Math.random();
+    let cmptrMove = '';
+
+    if(randomNmbr>=0 && randomNmbr<1/3){
+        cmptrMove = 'Rock';
+    } else if(randomNmbr>=1/3 && randomNmbr<2/3){
+        cmptrMove = 'Paper';
+    }else{
+        cmptrMove = 'Scissor';
+    }
+
+
+    let result = '';
+
+    if(cmptrMove === 'Rock'){
+        result = 'You Win.';
+    }else if(cmptrMove === 'Paper'){
+        result = 'Tie.';
+    }else{
+        result = 'You Lose.';
+    }
+
+    alert( `You picked Paper. Computer picked ${cmptrMove}. ${result}`)
+
+    ">Paper</button>
+    <button onclick="
+
+    let randomNmbr = Math.random();
+    let cmptrMove = '';
+
+    if(randomNmbr>=0 && randomNmbr<1/3){
+        cmptrMove = 'Rock';
+    } else if(randomNmbr>=1/3 && randomNmbr<2/3){
+        cmptrMove = 'Paper';
+    }else{
+        cmptrMove = 'Scissor';
+    }
+
+
+    let result = '';
+
+    if(cmptrMove === 'Rock'){
+        result = 'You Lose.';
+    }else if(cmptrMove === 'Paper'){
+        result = 'You Win.';
+    }else{
+        result = 'Tie.';
+    }
+
+    alert( `You picked Scissor. Computer picked ${cmptrMove}. ${result}`)
+
+    ">Scissor</button>
+    
+    <script>
+
+    </script>
+</body>
+
+</html>
