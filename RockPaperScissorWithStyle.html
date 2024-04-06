@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper and Scissor project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background-color: #4caf50;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:active {
+            background-color: #398439;
+        }
+
+        button.reset {
+            background-color: #f44336;
+        }
+
+        button.reset:hover {
+            background-color: #d32f2f;
+        }
+
+        button.reset:active {
+            background-color: #b71c1c;
+        }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .score {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Rock Paper Scissors</h1>
+        <p>Make your choice:</p>
+
+        <button onclick="playGame('Rock');">Rock</button>
+        <button onclick="playGame('Paper');">Paper</button>
+        <button onclick="playGame('Scissor');">Scissor</button>
+
+        <button class="reset" onclick="resetGame()">Reset Score</button>
+
+        <div class="score">
+            <strong>Score:</strong> Wins: <span id="wins">0</span>, Losses: <span id="losses">0</span>, Ties: <span
+                id="ties">0</span>
+        </div>
+    </div>
+
+    <script>
+        const score = {
+            wins: 0, losses: 0, ties: 0
+        };
+
+        function playGame(playerMove) {
+            const cmptrMove = pickComputerMove();
+            let result = '';
+
+            if (playerMove === 'Scissor') {
+                if (cmptrMove === 'Rock') {
+                    result = 'You Lose.';
+                } else if (cmptrMove === 'Paper') {
+                    result = 'You Win.';
+                } else {
+                    result = 'Tie.';
+                }
+            } else if (playerMove === 'Paper') {
+                if (cmptrMove === 'Rock') {
+                    result = 'You Win.';
+                } else if (cmptrMove === 'Paper') {
+                    result = 'Tie.';
+                } else {
+                    result = 'You Lose.';
+                }
+            } else {
+                if (cmptrMove === 'Rock') {
+                    result = 'Tie.';
+                } else if (cmptrMove === 'Paper') {
+                    result = 'You Lose.';
+                } else {
+                    result = 'You Win.';
+                }
+            }
+
+            if (result === 'You Win.') {
+                score.wins += 1;
+            } else if (result === 'You Lose.') {
+                score.losses += 1;
+            } else {
+                score.ties += 1;
+            }
+
+            document.getElementById('wins').textContent = score.wins;
+            document.getElementById('losses').textContent = score.losses;
+            document.getElementById('ties').textContent = score.ties;
+
+            alert(`You picked ${playerMove}. Computer picked ${cmptrMove}. ${result}
+            Wins:${score.wins}, Losses:${score.losses}, Ties:${score.ties}`);
+        }
+
+        function pickComputerMove() {
+            let randomNmbr = Math.random();
+            let cmptrMove = '';
+
+            if (randomNmbr >= 0 && randomNmbr < 1 / 3) {
+                cmptrMove = 'Rock';
+            } else if (randomNmbr >= 1 / 3 && randomNmbr < 2 / 3) {
+                cmptrMove = 'Paper';
+            } else {
+                cmptrMove = 'Scissor';
+            }
+
+            return cmptrMove;
+        }
+
+        function resetGame() {
+            score.wins = 0;
+            score.losses = 0;
+            score.ties = 0;
+            alert('Game is reset & starts from the beginning..');
+            document.getElementById('wins').textContent = score.wins;
+            document.getElementById('losses').textContent = score.losses;
+            document.getElementById('ties').textContent = score.ties;
+        }
+    </script>
+</body>
+
+</html>
